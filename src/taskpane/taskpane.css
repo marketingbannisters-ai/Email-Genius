@@ -78,3 +78,26 @@
 b {
     font-weight: bold;
 }
+
+/* show/hide helper */
+.hidden { display: none; }
+
+/* loader bar */
+.loader {
+  height: 4px;
+  background: #e5e5e5;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 8px 0 12px;
+}
+.loader .bar {
+  height: 100%;
+  width: 40%;
+  background: #0078d4;               /* Outlook blue */
+  animation: loader-slide 1.2s infinite linear;
+  border-radius: 2px;
+}
+@keyframes loader-slide {
+  0%   { transform: translateX(-120%); }
+  100% { transform: translateX(300%); }
+}
