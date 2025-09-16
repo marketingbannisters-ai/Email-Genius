@@ -12,7 +12,7 @@
   <AppDomains>
     <AppDomain>https://marketingbannisters-ai.github.io</AppDomain>
     <AppDomain>https://bannister.app.n8n.cloud</AppDomain>
-    <AppDomain>https://bannisters.com</AppDomain>
+    <AppDomain>https://www.bannisters.com</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Mailbox"/>
