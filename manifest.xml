@@ -6,25 +6,32 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Email Genius"/>
   <Description DefaultValue="A template to get started."/>
-  <IconUrl DefaultValue="https://res.cloudinary.com/dhwhrk0oe/image/upload/v1757957988/1_qsvaze_lyym47.jpg"/>
-  <HighResolutionIconUrl DefaultValue="https://res.cloudinary.com/dhwhrk0oe/image/upload/c_auto,h_128,w_128/1_qsvaze.jpg"/>
+  <IconUrl DefaultValue="https://res.cloudinary.com/dhwhrk0oe/image/upload/v1757994942/Email_Genius_Logo_wkmrt4.png"/>
+  <HighResolutionIconUrl DefaultValue="https://res.cloudinary.com/dhwhrk0oe/image/upload/v1757994932/Email_Genius_Logo_opibqq.png"/>
   <SupportUrl DefaultValue="https://www.bannisters.com/contact"/>
   <AppDomains>
-    <AppDomain>https://www.bannisters.com</AppDomain>
+    <AppDomain>https://marketingbannisters-ai.github.io</AppDomain>
+    <AppDomain>https://bannister.app.n8n.cloud</AppDomain>
+    <AppDomain>https://bannisters.com</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Mailbox"/>
   </Hosts>
   <Requirements>
     <Sets>
-      <Set Name="Mailbox" MinVersion="1.1"/>
+      <Set Name="Mailbox" MinVersion="1.8"/>
     </Sets>
   </Requirements>
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+        <SourceLocation DefaultValue="https://marketingbannisters-ai.github.io/email-genius/src/taskpane/taskpane.html"/>
         <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+    <Form xsi:type="ItemEdit">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://marketingbannisters-ai.github.io/email-genius/src/taskpane/taskpane.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -33,9 +40,10 @@
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
   </Rule>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
+
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.3">
+      <bt:Sets DefaultMinVersion="1.8">
         <bt:Set Name="Mailbox"/>
       </bt:Sets>
     </Requirements>
@@ -62,45 +70,31 @@
                     <SourceLocation resid="Taskpane.Url"/>
                   </Action>
                 </Control>
-                <Control xsi:type="Button" id="ActionButton">
-                  <Label resid="ActionButton.Label"/>
-                  <Supertip>
-                    <Title resid="ActionButton.Label"/>
-                    <Description resid="ActionButton.Tooltip"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>action</FunctionName>
-                  </Action>
-                </Control>
+                <!-- Removed the extra "Perform an action" button -->
               </Group>
             </OfficeTab>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
     </Hosts>
+
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://res.cloudinary.com/dhwhrk0oe/image/upload/v1757957988/1_qsvaze_lyym47.jpg"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://res.cloudinary.com/dhwhrk0oe/image/upload/v1757957988/1_qsvaze_lyym47.jpg"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://res.cloudinary.com/dhwhrk0oe/image/upload/v1757957988/1_qsvaze_lyym47.jpg"/>
+        <bt:Image id="Icon.16x16" DefaultValue="https://res.cloudinary.com/dhwhrk0oe/image/upload/v1757994942/Email_Genius_Logo_wkmrt4.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://res.cloudinary.com/dhwhrk0oe/image/upload/v1757994942/Email_Genius_Logo_wkmrt4.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://res.cloudinary.com/dhwhrk0oe/image/upload/v1757994942/Email_Genius_Logo_wkmrt4.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://marketingbannisters-ai.github.io/email-genius/src/commands/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://marketingbannisters-ai.github.io/email-genius/src/taskpane/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Email Genius"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Show Task Pane"/>
-       <!--  <bt:String id="ActionButton.Label" DefaultValue="Perform an action"/>-->
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens a pane displaying all available properties."/>
-        <bt:String id="ActionButton.Tooltip" DefaultValue="Perform an action when clicked."/>
+        <!-- Removed ActionButton strings -->
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
